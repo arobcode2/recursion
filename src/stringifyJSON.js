@@ -37,9 +37,6 @@ var stringifyJSON = function(obj) {
     		return '[' + result + ']';
     	} 
     	else {
-//     	    if (typeof obj === 'function' || typeof obj === 'undefined') {
-//               return '{}';
-//             }
     		if (Object.keys(obj).length === 0) {
     			return '{}';
     		}
@@ -55,11 +52,5 @@ var stringifyJSON = function(obj) {
     		}
     		return"{" + resultObj.toString() + "}";
     	}
-
    	}
 };
-
-
-
-//loop
-//stringifyJSON(obj[i])
