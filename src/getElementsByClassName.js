@@ -4,7 +4,10 @@
 // };
 
 // But instead we're going to implement it from scratch:
-var getElementsByClassName = function(className
-) {
+var getElementsByClassName = function(className) {
   // your code here
+  //use array or object to store elements that match the className being passed in
+  var elements = [];
+
+  return className.classList;
 };
