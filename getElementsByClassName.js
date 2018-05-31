@@ -4,16 +4,17 @@
 // };
 
 // But instead we're going to implement it from scratch:
-var getElementsByClassName = function(element, className) {
-  var result = [];
-  if(element.contains(className)) {
-  	result.push(element);
-  }
-
-  $("body").each(function(node) {
-  	if (node === $("div") || node === $("span")) {
-  		result.push(getElementsByClassName("someParam"));
+var getElementsByClassName = function(className) {
+	var element = document.body;
+  	var result = [];
+  	if(element.classList.contains(className)) {
+  		return element;
   	}
-  })
-  return result;
+  	//document.body.childNodes provides elements
+  	for(var i = 0; i < element.childNodes; i++) {
+  		if (element.childNodes[i].contains(className)) {
+  			result.push(getElementsByClassName(childNodes[i]));
+  		}
+  	}
+  	return result;
 };
